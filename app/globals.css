@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* Lienzo y superficies (monocromo calido) */
+  --color-canvas: #fbfbfa;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f6f3;
+
+  /* Tinta y texto */
+  --color-ink: #1a1a1a;
+  --color-muted: #787774;
+
+  /* Bordes / divisores */
+  --color-line: #eaeaea;
+
+  /* Acentos pastel apagados */
+  --color-pale-red: #fdebec;
+  --color-pale-red-ink: #9f2f2d;
+  --color-pale-blue: #e1f3fe;
+  --color-pale-blue-ink: #1f6c9f;
+  --color-pale-green: #edf3ec;
+  --color-pale-green-ink: #346538;
+  --color-pale-yellow: #fbf3db;
+  --color-pale-yellow-ink: #956400;
+
+  /* Tipografias (variables inyectadas por next/font en layout.tsx) */
+  --font-sans: var(--font-hanken), "Helvetica Neue", system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), "Newsreader", Georgia, serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-card: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-pale-yellow);
+  color: var(--color-ink);
+}
+
+/* Transicion suave de precios al cambiar de modalidad (PRD seccion 8) */
+.price-shift {
+  transition: opacity 200ms ease, color 200ms ease;
+}
+
+/* Entrada al hacer scroll (skill: translateY(12px) + opacity, 600ms) */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .price-shift {
+    transition: none;
+  }
+}
