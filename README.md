@@ -43,8 +43,9 @@ docs/PRD.md           documento de requisitos
 
 Estos puntos quedan marcados en el codigo para completar antes de produccion:
 
-- **Precios por servicio** (`lib/data.ts`): son PLACEHOLDERS coherentes con los precios
-  cerrados de los paquetes (que si son los del PRD). Sustituir por importes reales.
+- **Precios por servicio** (`lib/data.ts`): rangos orientativos de mercado (Espana) para
+  proyectos de implementacion de pago unico. Ajustar a la tarifa real del proveedor. Los
+  precios de los paquetes si son los cerrados del PRD.
 - **Backend del formulario** (`app/api/contact/route.ts`): el endpoint valida y responde
   OK. Quedan `TODO` para enchufar el webhook al equipo (n8n) y el email de confirmacion
   con dossier PDF (Resend o SMTP).

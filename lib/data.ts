@@ -1,7 +1,12 @@
-// Datos de la landing. Los PRECIOS son PLACEHOLDERS PROVISIONALES:
-// el PRD solo fija los precios de los 3 paquetes, no de los servicios sueltos.
-// Los rangos por servicio se han derivado para que la suma sea coherente con
-// los paquetes (seccion 5 del PRD). Sustituir por importes reales tras validacion.
+// Datos de la landing.
+// PRECIOS POR SERVICIO: rangos orientativos de mercado (Espana) para proyectos
+// de implementacion de pago unico realizados por agencias/freelance de
+// automatizacion e IA para PYMEs. La modalidad "empresa" (instalacion
+// on-premise) es mas cara por el despliegue local; "nube" es mas economica.
+// Quedan por encima de los precios cerrados de los paquetes (seccion 5 del PRD),
+// de modo que contratar un pack siempre resulta mas favorable que la suma suelta.
+// Ajustar a la tarifa real del proveedor antes de produccion.
+// Los precios de los PAQUETES son los fijados en el PRD y no se calculan.
 
 export type Modality = "nube" | "empresa";
 
@@ -68,7 +73,7 @@ export const SERVICES: Service[] = [
       "Reune manuales, procedimientos y documentos de cada area en un unico buscador inteligente. Tu equipo pregunta en lenguaje natural y obtiene la respuesta correcta con la fuente, sin abrir diez carpetas distintas.",
     benefit: "Menos tiempo buscando, menos dependencia de quien lo sabe todo.",
     duration: "2-3 semanas",
-    price: { empresa: { min: 1800, max: 3000 }, nube: { min: 1100, max: 2000 } },
+    price: { empresa: { min: 3500, max: 6500 }, nube: { min: 2000, max: 4000 } },
   },
   {
     id: "transcripcion-reuniones",
@@ -79,7 +84,7 @@ export const SERVICES: Service[] = [
       "Graba la reunion y recibe automaticamente la transcripcion, un resumen claro y la lista de tareas con responsables. Se acabo escribir el acta a mano o perder los acuerdos.",
     benefit: "Acuerdos y tareas por escrito sin esfuerzo despues de cada reunion.",
     duration: "1-2 semanas",
-    price: { empresa: { min: 1000, max: 1700 }, nube: { min: 650, max: 1150 } },
+    price: { empresa: { min: 1500, max: 3000 }, nube: { min: 800, max: 1800 } },
   },
   {
     id: "asistente-telegram",
@@ -90,7 +95,7 @@ export const SERVICES: Service[] = [
       "Un asistente en Telegram que responde sobre tus procesos, documentos y datos internos. El equipo consulta desde donde este, sin entrar a ningun sistema, y siempre con informacion de tu empresa.",
     benefit: "Respuestas internas al instante, sin saturar al resto del equipo.",
     duration: "1-2 semanas",
-    price: { empresa: { min: 700, max: 1100 }, nube: { min: 450, max: 750 } },
+    price: { empresa: { min: 1200, max: 2500 }, nube: { min: 700, max: 1500 } },
   },
   {
     id: "panel-asistentes",
@@ -101,7 +106,7 @@ export const SERVICES: Service[] = [
       "Un panel privado con asistentes preparados para las tareas habituales de tu empresa: redactar, resumir, traducir o consultar datos. Cada empleado usa el que necesita, con el contexto de su area ya cargado.",
     benefit: "Una herramienta de IA util desde el primer dia, sin curva de aprendizaje.",
     duration: "2-3 semanas",
-    price: { empresa: { min: 1200, max: 2000 }, nube: { min: 750, max: 1350 } },
+    price: { empresa: { min: 2500, max: 5000 }, nube: { min: 1500, max: 3000 } },
   },
   {
     id: "extraccion-facturas",
@@ -112,7 +117,7 @@ export const SERVICES: Service[] = [
       "Lee facturas en PDF, papel o correo y extrae proveedor, importes, impuestos y fechas listos para tu contabilidad. Detecta errores y duplicados antes de que lleguen al cierre.",
     benefit: "Horas de tecleo manual eliminadas y menos errores en contabilidad.",
     duration: "2-3 semanas",
-    price: { empresa: { min: 1400, max: 2400 }, nube: { min: 900, max: 1600 } },
+    price: { empresa: { min: 2500, max: 5500 }, nube: { min: 1500, max: 3500 } },
   },
   {
     id: "ocr-documentos",
@@ -123,7 +128,7 @@ export const SERVICES: Service[] = [
       "Digitaliza contratos, albaranes, formularios y documentos escaneados, y los convierte en texto buscable y exportable. Funciona con documentos de cualquier formato, incluso manuscritos sencillos.",
     benefit: "El archivo en papel deja de ser un cuello de botella.",
     duration: "1-2 semanas",
-    price: { empresa: { min: 500, max: 900 }, nube: { min: 300, max: 600 } },
+    price: { empresa: { min: 1200, max: 2800 }, nube: { min: 700, max: 1600 } },
   },
   {
     id: "automatizacion-flujos",
@@ -134,7 +139,7 @@ export const SERVICES: Service[] = [
       "Automatizamos las tareas repetitivas que saltan entre aplicaciones: pasar datos de un sitio a otro, avisar al equipo, generar registros o lanzar acciones segun lo que ocurra. Tu operativa actual sigue igual, solo que sin pasos manuales.",
     benefit: "Procesos que antes ocupaban horas pasan a ocurrir solos.",
     duration: "2-4 semanas",
-    price: { empresa: { min: 700, max: 1200 }, nube: { min: 450, max: 800 } },
+    price: { empresa: { min: 1500, max: 4000 }, nube: { min: 900, max: 2500 } },
   },
   {
     id: "generador-presupuestos",
@@ -145,7 +150,7 @@ export const SERVICES: Service[] = [
       "A partir de unos pocos datos, genera presupuestos y propuestas comerciales con tu formato, tus precios y un texto cuidado. Listos para revisar y enviar al cliente el mismo dia.",
     benefit: "Respondes antes que la competencia y cierras mas.",
     duration: "2-3 semanas",
-    price: { empresa: { min: 1300, max: 2200 }, nube: { min: 850, max: 1500 } },
+    price: { empresa: { min: 2000, max: 4000 }, nube: { min: 1200, max: 2500 } },
   },
   {
     id: "monitor-reputacion",
@@ -156,7 +161,7 @@ export const SERVICES: Service[] = [
       "Vigila resenas, menciones y comentarios sobre tu empresa en los principales canales y te avisa de lo relevante. Resume el sentimiento general para que actues a tiempo.",
     benefit: "Reaccionas a una mala resena antes de que haga dano.",
     duration: "1-2 semanas",
-    price: { empresa: { min: 900, max: 1500 }, nube: { min: 600, max: 1050 } },
+    price: { empresa: { min: 1500, max: 3000 }, nube: { min: 900, max: 1800 } },
   },
   {
     id: "chatbot-web",
@@ -167,7 +172,7 @@ export const SERVICES: Service[] = [
       "Un asistente en tu web que responde las preguntas frecuentes, orienta al visitante y recoge los datos de los interesados. Conoce tus servicios y deriva al equipo cuando hace falta una persona.",
     benefit: "Mas consultas resueltas y mas contactos captados sin ampliar plantilla.",
     duration: "2-3 semanas",
-    price: { empresa: { min: 1100, max: 1900 }, nube: { min: 700, max: 1300 } },
+    price: { empresa: { min: 2000, max: 4500 }, nube: { min: 1200, max: 2800 } },
   },
   {
     id: "analitica-nl",
@@ -178,7 +183,7 @@ export const SERVICES: Service[] = [
       "Conecta tus datos de ventas, clientes u operaciones y pregunta en espanol llano: cuanto facturamos el mes pasado, que producto crece mas, que cliente compra menos. Responde con cifras y graficos claros.",
     benefit: "Decisiones basadas en datos sin depender de informes a medida.",
     duration: "2-3 semanas",
-    price: { empresa: { min: 1300, max: 2200 }, nube: { min: 850, max: 1500 } },
+    price: { empresa: { min: 3000, max: 6000 }, nube: { min: 1800, max: 3800 } },
   },
   {
     id: "onboarding-empleados",
@@ -189,7 +194,7 @@ export const SERVICES: Service[] = [
       "Guia a los nuevos empleados durante sus primeros dias: les entrega la documentacion, resuelve sus dudas y comprueba que completan los pasos de su incorporacion. El equipo de personas se libera de lo repetitivo.",
     benefit: "Incorporaciones mas rapidas y homogeneas, sin sobrecargar a RRHH.",
     duration: "2-3 semanas",
-    price: { empresa: { min: 900, max: 1600 }, nube: { min: 600, max: 1100 } },
+    price: { empresa: { min: 1800, max: 3500 }, nube: { min: 1000, max: 2200 } },
   },
   {
     id: "landing-corporativa",
@@ -200,7 +205,7 @@ export const SERVICES: Service[] = [
       "Disenamos y publicamos una pagina rapida, cuidada y orientada a convertir visitas en contactos. Optimizada para moviles, buscadores y velocidad de carga desde el primer dia.",
     benefit: "Presencia profesional que trabaja para captar clientes.",
     duration: "1-2 semanas",
-    price: { empresa: { min: 900, max: 1800 }, nube: { min: 700, max: 1400 } },
+    price: { empresa: { min: 1200, max: 3000 }, nube: { min: 900, max: 2200 } },
   },
 ];
 
