@@ -8,9 +8,9 @@ export function formatEur(value: number): string {
   }).format(value);
 }
 
-export function formatRange(range: PriceRange): string {
-  if (range.min === range.max) return formatEur(range.min);
-  return `${formatEur(range.min)} - ${formatEur(range.max)}`;
+// Precio "desde": se muestra el minimo como punto de entrada, sin rango.
+export function formatPrice(range: PriceRange): string {
+  return `Desde ${formatEur(range.min)}`;
 }
 
 // Suma de minimos y suma de maximos de los servicios seleccionados (PRD seccion 9).

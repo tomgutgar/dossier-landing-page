@@ -13,7 +13,8 @@ Requisitos en `docs/PRD.md`.
 - **Datos antes que markup**: servicios, paquetes, precios y copy viven en `lib/data.ts`.
   No hardcodear contenido en los componentes.
 - **Precios**: el unico control de precio global es el toggle de modalidad (`useSite`).
-  Para mostrar precios usar `<PriceText>` o `formatRange` de `lib/pricing.ts`.
+  Para mostrar precios usar `<PriceText>` o `formatPrice` de `lib/pricing.ts`
+  (formato "Desde X EUR", sin rangos).
 - **Estado global** via `lib/context.tsx` (`useSite`): modalidad, seleccion del
   configurador y `requestQuote()` para prefilar el formulario. No usar URL para el prefill.
 - **Diseno**: monocromo calido + pasteles apagados, bordes de 1px (`border-line`), flat,

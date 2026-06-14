@@ -34,7 +34,7 @@ export const MODALITIES: Record<
     label: "Instalacion en empresa",
     short: "En empresa",
     description:
-      "Todo se ejecuta en tus instalaciones y tus datos nunca salen de la empresa. Puesta en marcha de 2-4 semanas y sin coste por uso despues. Ideal para datos sensibles o alto volumen.",
+      "Desplegamos en un servidor dedicado que gestiona y mantiene nuestro equipo, no tu empresa. Tus datos quedan en un entorno aislado y exclusivo para ti. Puesta en marcha de 2-4 semanas y sin coste por uso despues. Ideal para datos sensibles o alto volumen.",
   },
 };
 

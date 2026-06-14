@@ -9,8 +9,8 @@ import { CloudIcon, BuildingIcon } from "@/components/icons";
 import { cn } from "@/lib/cn";
 
 const ROWS = [
-  { label: "Donde se ejecuta", nube: "En servidores externos auditados", empresa: "En las instalaciones del cliente" },
-  { label: "Tus datos", nube: "Procesados por proveedores certificados", empresa: "Nunca salen de la empresa" },
+  { label: "Donde se ejecuta", nube: "En servidores externos auditados", empresa: "En un servidor dedicado a cargo de nuestro equipo" },
+  { label: "Tus datos", nube: "Procesados por proveedores certificados", empresa: "En un entorno aislado y exclusivo, gestionado por nosotros" },
   { label: "Coste recurrente", nube: "Variable segun el volumen real de uso", empresa: "Sin coste por uso tras la implantacion" },
   { label: "Puesta en marcha", nube: "Dias", empresa: "2-4 semanas" },
   { label: "Recomendado para", nube: "Arranque rapido o empresas en crecimiento", empresa: "Datos sensibles o alto volumen" },

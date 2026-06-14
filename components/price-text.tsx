@@ -2,7 +2,7 @@
 
 import { useSite } from "@/lib/context";
 import { PriceRange, Modality } from "@/lib/data";
-import { formatRange } from "@/lib/pricing";
+import { formatPrice } from "@/lib/pricing";
 import { cn } from "@/lib/cn";
 
 // Muestra un rango de precio segun la modalidad global, con transicion suave
@@ -17,7 +17,7 @@ export function PriceText({
   const { modality } = useSite();
   return (
     <span key={modality} className={cn("price-shift tabular-nums", className)}>
-      {formatRange(price[modality])}
+      {formatPrice(price[modality])}
     </span>
   );
 }

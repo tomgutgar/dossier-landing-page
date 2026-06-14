@@ -2,7 +2,7 @@
 
 import { useSite } from "@/lib/context";
 import { AREAS, SERVICES } from "@/lib/data";
-import { sumSelected, matchedPackages, formatRange, formatEur } from "@/lib/pricing";
+import { sumSelected, matchedPackages, formatPrice, formatEur } from "@/lib/pricing";
 import { SectionHeading } from "@/components/section-heading";
 import { ModalityToggle } from "@/components/modality-toggle";
 import { Reveal } from "@/components/reveal";
@@ -70,7 +70,7 @@ export function Configurator() {
                               </span>
                             </span>
                             <span className="shrink-0 text-sm text-muted tabular-nums">
-                              {formatRange(service.price[modality])}
+                              {formatPrice(service.price[modality])}
                             </span>
                           </label>
                         </li>
@@ -101,7 +101,7 @@ export function Configurator() {
                     key={`${modality}-${selected.length}`}
                     className="price-shift mt-2 font-serif text-3xl tracking-tight text-ink"
                   >
-                    {selected.length === 0 ? formatEur(0) : formatRange(total)}
+                    {selected.length === 0 ? formatEur(0) : formatPrice(total)}
                   </p>
                 </div>
 
