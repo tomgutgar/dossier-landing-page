@@ -52,6 +52,45 @@
   --radius-card: 14px;
 }
 
+/* ============================================================
+   ENGRANA — Modo oscuro (paleta dark del sistema Claude Design).
+   Redefine los tokens de color; las utilidades de Tailwind v4 los
+   resuelven en runtime, asi que todo el sitio responde al toggle.
+   ============================================================ */
+[data-theme="dark"] {
+  --color-canvas: #0d0f12;
+  --color-surface: #15181d;
+  --color-surface-2: #1c2128;
+
+  --color-ink: #f1f3f6;
+  --color-muted: #99a2ad;
+
+  --color-line: #282e36;
+  --color-line-strong: #3a424c;
+
+  --color-accent: #6a4df2;
+  --color-accent-press: #5337e0;
+  --color-accent-soft: #1e1a3d;
+  --color-on-accent: #ffffff;
+
+  --color-accent-2: #c9f24e;
+  --color-accent-2-soft: #25300c;
+  --color-on-accent-2: #c9f24e;
+
+  --color-accent-3: #25d8ce;
+  --color-accent-3-soft: #0c2b29;
+  --color-on-accent-3: #06201e;
+
+  --color-pale-red: #2e1416;
+  --color-pale-red-ink: #ff5a5e;
+  --color-pale-blue: #1e1a3d;
+  --color-pale-blue-ink: #6a4df2;
+  --color-pale-green: #0e2a20;
+  --color-pale-green-ink: #2bd188;
+  --color-pale-yellow: #2e2410;
+  --color-pale-yellow-ink: #f5b53d;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -63,6 +102,7 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* Titulares display — geometria limpia, tracking ajustado (sistema Engrana) */
@@ -96,6 +136,30 @@ h4 {
   transform: none;
 }
 
+/* Visual del hero: el isotipo gira y las flechas fluyen hacia el motor */
+@keyframes engrana-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes engrana-flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.gear-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: engrana-spin 16s linear infinite;
+}
+
+.flow-paths path {
+  stroke-dasharray: 6 8;
+  animation: engrana-flow 0.9s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -107,5 +171,9 @@ h4 {
   }
   .price-shift {
     transition: none;
+  }
+  .gear-spin,
+  .flow-paths path {
+    animation: none;
   }
 }

@@ -132,6 +132,23 @@ export function LinkedinIcon({ className }: IconProps) {
   );
 }
 
+export function SunIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className} aria-hidden>
+      <circle cx="12" cy="12" r="4.5" />
+      <path d="M12 2.5v2M12 19.5v2M4.5 12h-2M21.5 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4" />
+    </svg>
+  );
+}
+
+export function MoonIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className} aria-hidden>
+      <path d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z" />
+    </svg>
+  );
+}
+
 // Marca / isotipo Engrana — engranaje de 6 dientes equidistantes (cada 60deg)
 // con disco central y nodo de "engrane" cuadrado rotado a 45deg en color acento.
 // Los dientes y el disco heredan currentColor; el nodo usa el indigo de marca.

@@ -53,7 +53,10 @@ export function Hero() {
   );
 }
 
-// Composicion geometrica abstracta: diagrama de flujo limpio (sin fotos).
+// Composicion geometrica: tres procesos convergen en el motor de Engrana
+// (el isotipo, que gira) y salen ya automatizados. Colores via tokens del
+// tema para que la pieza responda a modo claro/oscuro. Animaciones (giro y
+// flujo de las flechas) definidas en globals.css y respetando reduced-motion.
 function HeroVisual() {
   return (
     <div className="relative">
@@ -62,7 +65,7 @@ function HeroVisual() {
           viewBox="0 0 360 300"
           className="h-auto w-full"
           role="img"
-          aria-label="Diagrama abstracto de procesos conectados que se automatizan"
+          aria-label="Tres procesos se conectan al motor de automatizacion de Engrana, que los procesa y devuelve resueltos"
         >
           <defs>
             <pattern
@@ -71,65 +74,103 @@ function HeroVisual() {
               height="18"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="1.5" cy="1.5" r="1.2" fill="#e2e6ec" />
+              <circle cx="1.5" cy="1.5" r="1.2" fill="var(--color-line)" />
             </pattern>
+            {/* Punta de flecha tipo chevron; hereda el color del trazo */}
+            <marker
+              id="flow-arrow"
+              viewBox="0 0 10 10"
+              refX="7"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto"
+            >
+              <path
+                d="M1 1.5 L8 5 L1 8.5"
+                fill="none"
+                stroke="context-stroke"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </marker>
           </defs>
           <rect width="360" height="300" fill="url(#dots)" />
 
-          {/* conexiones */}
-          <path
-            d="M70 70 H180 V150 H290"
+          {/* conexiones con flujo animado: 3 entradas hacia el engranaje */}
+          <g
+            className="flow-paths"
             fill="none"
-            stroke="#cdd3dc"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M70 150 H180"
-            fill="none"
-            stroke="#cdd3dc"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M70 230 H180 V150"
-            fill="none"
-            stroke="#cdd3dc"
-            strokeWidth="1.5"
-          />
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          >
+            <path
+              d="M74 70 H132 V112"
+              stroke="var(--color-accent)"
+              markerEnd="url(#flow-arrow)"
+            />
+            <path
+              d="M74 150 H126"
+              stroke="var(--color-accent)"
+              markerEnd="url(#flow-arrow)"
+            />
+            <path
+              d="M74 230 H132 V188"
+              stroke="var(--color-accent)"
+              markerEnd="url(#flow-arrow)"
+            />
+            {/* salida ya automatizada */}
+            <path
+              d="M234 150 H300"
+              stroke="var(--color-accent-3)"
+              markerEnd="url(#flow-arrow)"
+            />
+          </g>
 
           {/* nodos de entrada */}
           <g>
-            <rect x="30" y="52" width="40" height="36" rx="8" fill="#ece8fd" />
-            <rect x="30" y="132" width="40" height="36" rx="8" fill="#d6f6f4" />
-            <rect x="30" y="212" width="40" height="36" rx="8" fill="#f2fbd6" />
+            <rect x="34" y="52" width="40" height="36" rx="8" fill="var(--color-accent-soft)" />
+            <rect x="34" y="132" width="40" height="36" rx="8" fill="var(--color-accent-3-soft)" />
+            <rect x="34" y="212" width="40" height="36" rx="8" fill="var(--color-accent-2-soft)" />
           </g>
 
-          {/* nodo central de proceso */}
-          <rect
-            x="150"
-            y="120"
-            width="60"
-            height="60"
-            rx="12"
-            fill="#4b2be8"
-          />
-          <circle cx="180" cy="150" r="11" fill="none" stroke="#fff" strokeWidth="1.6" />
-          <path
-            d="M180 134v6M180 160v6M164 150h6M194 150h6"
-            stroke="#fff"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
+          {/* motor central: el isotipo Engrana girando */}
+          <g transform="translate(132 102)">
+            <g className="gear-spin">
+              <g fill="var(--color-accent)">
+                <rect x="41" y="6" width="14" height="24" rx="4" />
+                <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(60 48 48)" />
+                <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(120 48 48)" />
+                <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(180 48 48)" />
+                <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(240 48 48)" />
+                <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(300 48 48)" />
+                <circle cx="48" cy="48" r="22" />
+              </g>
+              <rect
+                x="35"
+                y="35"
+                width="26"
+                height="26"
+                rx="6"
+                transform="rotate(45 48 48)"
+                fill="var(--color-surface)"
+              />
+            </g>
+          </g>
 
-          {/* salida */}
-          <rect x="280" y="130" width="48" height="40" rx="10" fill="#dcf5ea" />
-          <path
-            d="M294 150l5 5 9-10"
-            stroke="#0a7a52"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
+          {/* nodo de salida con check */}
+          <g>
+            <rect x="300" y="130" width="40" height="40" rx="10" fill="var(--color-accent-3-soft)" />
+            <path
+              d="M311 150l6 6 11-12"
+              stroke="var(--color-accent-3)"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </g>
         </svg>
       </div>
     </div>

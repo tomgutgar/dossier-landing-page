@@ -81,7 +81,17 @@ export default function RootLayout({
     <html
       lang="es"
       className={`${sans.variable} ${display.variable} ${mono.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Aplica el tema guardado (o la preferencia del sistema) antes del
+            primer paint para evitar un parpadeo de modo claro. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.dataset.theme='dark'}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"

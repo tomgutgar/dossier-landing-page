@@ -5,6 +5,7 @@ import { SITE } from "@/lib/data";
 import { useSite } from "@/lib/context";
 import { Button } from "@/components/ui/button";
 import { LogoMark, MenuIcon, CloseIcon } from "@/components/icons";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const LINKS = [
   { href: "#servicios", label: "Servicios" },
@@ -37,23 +38,26 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
+          <ThemeToggle />
           <Button size="sm" onClick={() => requestQuote([])}>
             Solicitar consulta
           </Button>
         </div>
 
-        <button
-          className="md:hidden"
-          aria-label={open ? "Cerrar menu" : "Abrir menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? (
-            <CloseIcon className="h-6 w-6" />
-          ) : (
-            <MenuIcon className="h-6 w-6" />
-          )}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            aria-label={open ? "Cerrar menu" : "Abrir menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? (
+              <CloseIcon className="h-6 w-6" />
+            ) : (
+              <MenuIcon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </nav>
 
       {open && (
