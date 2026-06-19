@@ -15,9 +15,9 @@ const inputClass =
   "w-full rounded-md border border-line bg-surface px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-muted focus:border-ink focus:ring-2 focus:ring-ink/10";
 
 const MODALITY_OPTIONS: { value: ModalityChoice; label: string }[] = [
-  { value: "empresa", label: "Instalacion en empresa" },
+  { value: "empresa", label: "Instalación en empresa" },
   { value: "nube", label: "Servicio en la nube" },
-  { value: "indistinto", label: "No lo tengo claro todavia" },
+  { value: "indistinto", label: "No lo tengo claro todavía" },
 ];
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -63,8 +63,8 @@ export function ContactForm() {
       ? "Indica un email de contacto."
       : emailRe.test(email)
         ? ""
-        : "El email no parece valido.",
-    privacidad: privacidad ? "" : "Debes aceptar la politica de privacidad.",
+        : "El email no parece válido.",
+    privacidad: privacidad ? "" : "Debes aceptar la política de privacidad.",
   };
   const isValid = Object.values(errors).every((e) => !e);
 
@@ -128,7 +128,7 @@ export function ContactForm() {
       <SectionHeading
         eyebrow="Contacto"
         title="Solicita tu consulta gratuita"
-        description="Cuentanos que necesitas y te respondemos con los siguientes pasos. Sin compromiso."
+        description="Cuéntanos qué necesitas y te respondemos con los siguientes pasos. Sin compromiso."
       />
 
       <Reveal className="mx-auto mt-12 max-w-2xl">
@@ -173,7 +173,7 @@ export function ContactForm() {
               />
             </Field>
 
-            <Field label="Telefono">
+            <Field label="Teléfono">
               <input
                 type="tel"
                 className={inputClass}
@@ -187,7 +187,7 @@ export function ContactForm() {
           {/* Servicios de interes (seleccion multiple, prefill desde configurador) */}
           <fieldset className="mt-6">
             <legend className="text-sm font-medium text-ink">
-              Servicios de interes
+              Servicios de interés
             </legend>
             <p className="mt-1 text-xs text-muted">
               Selecciona los que quieras. Se rellenan solos desde el configurador
@@ -241,7 +241,7 @@ export function ContactForm() {
           </fieldset>
 
           <div className="mt-6">
-            <Field label="Numero aproximado de empleados">
+            <Field label="Número aproximado de empleados">
               <select
                 className={inputClass}
                 value={empleados}
@@ -264,7 +264,7 @@ export function ContactForm() {
                 className={cn(inputClass, "resize-y")}
                 value={mensaje}
                 onChange={(e) => setMensaje(e.target.value)}
-                placeholder="Cuentanos brevemente que quieres resolver."
+                placeholder="Cuéntanos brevemente qué quieres resolver."
               />
             </Field>
           </div>
@@ -278,9 +278,9 @@ export function ContactForm() {
               onBlur={() => setTouched((t) => ({ ...t, privacidad: true }))}
             />
             <span>
-              He leido y acepto la{" "}
+              He leído y acepto la{" "}
               <a href="/privacidad" className="underline hover:text-muted">
-                politica de privacidad
+                política de privacidad
               </a>
               .
             </span>
@@ -294,7 +294,7 @@ export function ContactForm() {
           {status === "error" && (
             <p className="mt-5 rounded-md bg-pale-red p-3 text-sm text-pale-red-ink">
               No hemos podido enviar la solicitud. Vuelve a intentarlo o
-              escribenos directamente.
+              escríbenos directamente.
             </p>
           )}
 

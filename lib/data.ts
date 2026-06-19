@@ -12,7 +12,7 @@ export type Modality = "nube" | "empresa";
 
 export const SITE = {
   name: "Engrana",
-  tagline: "Automatizacion y digitalizacion para PYMEs",
+  tagline: "Automatización y digitalización para PYMEs",
   email: "hola@engrana.es",
   linkedin: "https://www.linkedin.com/company/engrana",
   url: "https://engrana.es",
@@ -27,14 +27,14 @@ export const MODALITIES: Record<
     label: "Servicio en la nube",
     short: "Nube",
     description:
-      "Funciona en servidores externos auditados. Arranque en dias y coste variable segun tu uso real. Ideal para empezar rapido o si tu empresa esta creciendo.",
+      "Funciona en servidores externos auditados. Arranque en días y coste variable según tu uso real. Ideal para empezar rápido o si tu empresa está creciendo.",
   },
   empresa: {
     id: "empresa",
-    label: "Instalacion en empresa",
+    label: "Instalación en empresa",
     short: "En empresa",
     description:
-      "Desplegamos en un servidor dedicado que gestiona y mantiene nuestro equipo, no tu empresa. Tus datos quedan en un entorno aislado y exclusivo para ti. Puesta en marcha de 2-4 semanas y sin coste por uso despues. Ideal para datos sensibles o alto volumen.",
+      "Desplegamos en un servidor dedicado que gestiona y mantiene nuestro equipo, no tu empresa. Tus datos quedan en un entorno aislado y exclusivo para ti. Puesta en marcha de 2-4 semanas y sin coste por uso después. Ideal para datos sensibles o alto volumen.",
   },
 };
 
@@ -45,9 +45,9 @@ export type Area = {
 
 export const AREAS: Area[] = [
   { id: "inteligencia", name: "Inteligencia y conocimiento" },
-  { id: "documentacion", name: "Digitalizacion de documentacion" },
-  { id: "procesos", name: "Automatizacion de procesos" },
-  { id: "atencion", name: "Atencion al cliente y presencia digital" },
+  { id: "documentacion", name: "Digitalización de documentación" },
+  { id: "procesos", name: "Automatización de procesos" },
+  { id: "atencion", name: "Atención al cliente y presencia digital" },
 ];
 
 export type PriceRange = { min: number; max: number };
@@ -68,9 +68,9 @@ export const SERVICES: Service[] = [
     id: "base-conocimiento",
     area: "inteligencia",
     name: "Base de conocimiento por departamentos",
-    tagline: "Toda la informacion del equipo, encontrable al instante.",
+    tagline: "Toda la información del equipo, encontrable al instante.",
     description:
-      "Reune manuales, procedimientos y documentos de cada area en un unico buscador inteligente. Tu equipo pregunta en lenguaje natural y obtiene la respuesta correcta con la fuente, sin abrir diez carpetas distintas.",
+      "Reúne manuales, procedimientos y documentos de cada área en un único buscador inteligente. Tu equipo pregunta en lenguaje natural y obtiene la respuesta correcta con la fuente, sin abrir diez carpetas distintas.",
     benefit: "Menos tiempo buscando, menos dependencia de quien lo sabe todo.",
     duration: "2-3 semanas",
     price: { empresa: { min: 3500, max: 6500 }, nube: { min: 2000, max: 4000 } },
@@ -78,11 +78,11 @@ export const SERVICES: Service[] = [
   {
     id: "transcripcion-reuniones",
     area: "inteligencia",
-    name: "Transcripcion y resumen automatico de reuniones",
-    tagline: "Cada reunion deja acta sola.",
+    name: "Transcripción y resumen automático de reuniones",
+    tagline: "Cada reunión deja acta sola.",
     description:
-      "Graba la reunion y recibe automaticamente la transcripcion, un resumen claro y la lista de tareas con responsables. Se acabo escribir el acta a mano o perder los acuerdos.",
-    benefit: "Acuerdos y tareas por escrito sin esfuerzo despues de cada reunion.",
+      "Graba la reunión y recibe automáticamente la transcripción, un resumen claro y la lista de tareas con responsables. Se acabó escribir el acta a mano o perder los acuerdos.",
+    benefit: "Acuerdos y tareas por escrito sin esfuerzo después de cada reunión.",
     duration: "1-2 semanas",
     price: { empresa: { min: 1500, max: 3000 }, nube: { min: 800, max: 1800 } },
   },
@@ -90,9 +90,9 @@ export const SERVICES: Service[] = [
     id: "asistente-telegram",
     area: "inteligencia",
     name: "Asistente virtual corporativo (Telegram)",
-    tagline: "Resuelve dudas del dia a dia desde el movil.",
+    tagline: "Resuelve dudas del día a día desde el móvil.",
     description:
-      "Un asistente en Telegram que responde sobre tus procesos, documentos y datos internos. El equipo consulta desde donde este, sin entrar a ningun sistema, y siempre con informacion de tu empresa.",
+      "Un asistente en Telegram que responde sobre tus procesos, documentos y datos internos. El equipo consulta desde donde esté, sin entrar a ningún sistema, y siempre con información de tu empresa.",
     benefit: "Respuestas internas al instante, sin saturar al resto del equipo.",
     duration: "1-2 semanas",
     price: { empresa: { min: 1200, max: 2500 }, nube: { min: 700, max: 1500 } },
@@ -103,15 +103,15 @@ export const SERVICES: Service[] = [
     name: "Panel de asistentes de IA para empleados",
     tagline: "Asistentes a medida para cada tarea repetitiva.",
     description:
-      "Un panel privado con asistentes preparados para las tareas habituales de tu empresa: redactar, resumir, traducir o consultar datos. Cada empleado usa el que necesita, con el contexto de su area ya cargado.",
-    benefit: "Una herramienta de IA util desde el primer dia, sin curva de aprendizaje.",
+      "Un panel privado con asistentes preparados para las tareas habituales de tu empresa: redactar, resumir, traducir o consultar datos. Cada empleado usa el que necesita, con el contexto de su área ya cargado.",
+    benefit: "Una herramienta de IA útil desde el primer día, sin curva de aprendizaje.",
     duration: "2-3 semanas",
     price: { empresa: { min: 2500, max: 5000 }, nube: { min: 1500, max: 3000 } },
   },
   {
     id: "extraccion-facturas",
     area: "documentacion",
-    name: "Extraccion automatica de facturas",
+    name: "Extracción automática de facturas",
     tagline: "De la factura a tu sistema, sin teclear.",
     description:
       "Lee facturas en PDF, papel o correo y extrae proveedor, importes, impuestos y fechas listos para tu contabilidad. Detecta errores y duplicados antes de que lleguen al cierre.",
@@ -122,7 +122,7 @@ export const SERVICES: Service[] = [
   {
     id: "ocr-documentos",
     area: "documentacion",
-    name: "Extraccion de texto de documentos",
+    name: "Extracción de texto de documentos",
     tagline: "Convierte cualquier papel en datos usables.",
     description:
       "Digitaliza contratos, albaranes, formularios y documentos escaneados, y los convierte en texto buscable y exportable. Funciona con documentos de cualquier formato, incluso manuscritos sencillos.",
@@ -133,10 +133,10 @@ export const SERVICES: Service[] = [
   {
     id: "automatizacion-flujos",
     area: "procesos",
-    name: "Automatizacion de flujos de trabajo",
+    name: "Automatización de flujos de trabajo",
     tagline: "Conecta tus herramientas y deja que trabajen solas.",
     description:
-      "Automatizamos las tareas repetitivas que saltan entre aplicaciones: pasar datos de un sitio a otro, avisar al equipo, generar registros o lanzar acciones segun lo que ocurra. Tu operativa actual sigue igual, solo que sin pasos manuales.",
+      "Automatizamos las tareas repetitivas que saltan entre aplicaciones: pasar datos de un sitio a otro, avisar al equipo, generar registros o lanzar acciones según lo que ocurra. Tu operativa actual sigue igual, solo que sin pasos manuales.",
     benefit: "Procesos que antes ocupaban horas pasan a ocurrir solos.",
     duration: "2-4 semanas",
     price: { empresa: { min: 1500, max: 4000 }, nube: { min: 900, max: 2500 } },
@@ -147,40 +147,40 @@ export const SERVICES: Service[] = [
     name: "Generador de presupuestos y propuestas",
     tagline: "Propuestas comerciales en minutos, no en tardes.",
     description:
-      "A partir de unos pocos datos, genera presupuestos y propuestas comerciales con tu formato, tus precios y un texto cuidado. Listos para revisar y enviar al cliente el mismo dia.",
-    benefit: "Respondes antes que la competencia y cierras mas.",
+      "A partir de unos pocos datos, genera presupuestos y propuestas comerciales con tu formato, tus precios y un texto cuidado. Listos para revisar y enviar al cliente el mismo día.",
+    benefit: "Respondes antes que la competencia y cierras más.",
     duration: "2-3 semanas",
     price: { empresa: { min: 2000, max: 4000 }, nube: { min: 1200, max: 2500 } },
   },
   {
     id: "monitor-reputacion",
     area: "procesos",
-    name: "Monitor de reputacion online",
+    name: "Monitor de reputación online",
     tagline: "Entérate de lo que dicen de ti, cuando lo dicen.",
     description:
-      "Vigila resenas, menciones y comentarios sobre tu empresa en los principales canales y te avisa de lo relevante. Resume el sentimiento general para que actues a tiempo.",
-    benefit: "Reaccionas a una mala resena antes de que haga dano.",
+      "Vigila reseñas, menciones y comentarios sobre tu empresa en los principales canales y te avisa de lo relevante. Resume el sentimiento general para que actúes a tiempo.",
+    benefit: "Reaccionas a una mala reseña antes de que haga daño.",
     duration: "1-2 semanas",
     price: { empresa: { min: 1500, max: 3000 }, nube: { min: 900, max: 1800 } },
   },
   {
     id: "chatbot-web",
     area: "atencion",
-    name: "Chatbot de atencion al cliente para web",
+    name: "Chatbot de atención al cliente para web",
     tagline: "Atiende a tus visitantes a cualquier hora.",
     description:
       "Un asistente en tu web que responde las preguntas frecuentes, orienta al visitante y recoge los datos de los interesados. Conoce tus servicios y deriva al equipo cuando hace falta una persona.",
-    benefit: "Mas consultas resueltas y mas contactos captados sin ampliar plantilla.",
+    benefit: "Más consultas resueltas y más contactos captados sin ampliar plantilla.",
     duration: "2-3 semanas",
     price: { empresa: { min: 2000, max: 4500 }, nube: { min: 1200, max: 2800 } },
   },
   {
     id: "analitica-nl",
     area: "atencion",
-    name: "Analitica de negocio en lenguaje natural",
-    tagline: "Pregunta a tus datos como hablarias con un analista.",
+    name: "Analítica de negocio en lenguaje natural",
+    tagline: "Pregunta a tus datos como hablarías con un analista.",
     description:
-      "Conecta tus datos de ventas, clientes u operaciones y pregunta en espanol llano: cuanto facturamos el mes pasado, que producto crece mas, que cliente compra menos. Responde con cifras y graficos claros.",
+      "Conecta tus datos de ventas, clientes u operaciones y pregunta en español llano: cuánto facturamos el mes pasado, qué producto crece más, qué cliente compra menos. Responde con cifras y gráficos claros.",
     benefit: "Decisiones basadas en datos sin depender de informes a medida.",
     duration: "2-3 semanas",
     price: { empresa: { min: 3000, max: 6000 }, nube: { min: 1800, max: 3800 } },
@@ -188,11 +188,11 @@ export const SERVICES: Service[] = [
   {
     id: "onboarding-empleados",
     area: "atencion",
-    name: "Agente de incorporacion de empleados",
-    tagline: "Que cada nueva incorporacion arranque sola.",
+    name: "Agente de incorporación de empleados",
+    tagline: "Que cada nueva incorporación arranque sola.",
     description:
-      "Guia a los nuevos empleados durante sus primeros dias: les entrega la documentacion, resuelve sus dudas y comprueba que completan los pasos de su incorporacion. El equipo de personas se libera de lo repetitivo.",
-    benefit: "Incorporaciones mas rapidas y homogeneas, sin sobrecargar a RRHH.",
+      "Guía a los nuevos empleados durante sus primeros días: les entrega la documentación, resuelve sus dudas y comprueba que completan los pasos de su incorporación. El equipo de personas se libera de lo repetitivo.",
+    benefit: "Incorporaciones más rápidas y homogéneas, sin sobrecargar a RRHH.",
     duration: "2-3 semanas",
     price: { empresa: { min: 1800, max: 3500 }, nube: { min: 1000, max: 2200 } },
   },
@@ -200,9 +200,9 @@ export const SERVICES: Service[] = [
     id: "landing-corporativa",
     area: "atencion",
     name: "Landing page corporativa",
-    tagline: "Una pagina que presenta tu empresa y capta clientes.",
+    tagline: "Una página que presenta tu empresa y capta clientes.",
     description:
-      "Disenamos y publicamos una pagina rapida, cuidada y orientada a convertir visitas en contactos. Optimizada para moviles, buscadores y velocidad de carga desde el primer dia.",
+      "Diseñamos y publicamos una página rápida, cuidada y orientada a convertir visitas en contactos. Optimizada para móviles, buscadores y velocidad de carga desde el primer día.",
     benefit: "Presencia profesional que trabaja para captar clientes.",
     duration: "1-2 semanas",
     price: { empresa: { min: 1200, max: 3000 }, nube: { min: 900, max: 2200 } },
@@ -223,14 +223,14 @@ export const PACKAGES: Package[] = [
   {
     id: "arranque",
     name: "Arranque",
-    description: "Primeros pasos en automatizacion.",
+    description: "Primeros pasos en automatización.",
     serviceIds: ["asistente-telegram", "ocr-documentos", "automatizacion-flujos"],
     price: { empresa: { min: 1800, max: 3000 }, nube: { min: 1100, max: 2000 } },
   },
   {
     id: "operaciones",
     name: "Operaciones",
-    description: "Digitalizacion y automatizacion del nucleo del negocio.",
+    description: "Digitalización y automatización del núcleo del negocio.",
     serviceIds: [
       "base-conocimiento",
       "extraccion-facturas",
@@ -262,16 +262,16 @@ export const PILLARS = [
   {
     title: "Modular",
     description:
-      "Cada servicio funciona de forma independiente. Empieza por lo que mas necesitas.",
+      "Cada servicio funciona de forma independiente. Empieza por lo que más necesitas.",
   },
   {
-    title: "Sin friccion",
+    title: "Sin fricción",
     description: "Nos integramos con lo que ya usas. Sin cambiar tu operativa.",
   },
   {
-    title: "Tu eliges como",
+    title: "Tú eliges cómo",
     description:
-      "Instalacion en tu empresa o servicio en la nube. Mismos resultados.",
+      "Instalación en tu empresa o servicio en la nube. Mismos resultados.",
   },
 ];
 
@@ -279,29 +279,29 @@ export const PROCESS_STEPS = [
   {
     title: "Consulta inicial",
     description:
-      "Analizamos tus procesos y detectamos donde la automatizacion tiene mas impacto, sin compromiso.",
+      "Analizamos tus procesos y detectamos dónde la automatización tiene más impacto, sin compromiso.",
   },
   {
     title: "Propuesta a medida",
     description: "Presupuesto cerrado y plazos concretos antes de empezar.",
   },
   {
-    title: "Implementacion",
+    title: "Implementación",
     description:
       "Desplegamos sin interrumpir tu operativa. Informes de progreso en cada fase.",
   },
   {
-    title: "Soporte y evolucion",
+    title: "Soporte y evolución",
     description:
-      "Mantenimiento, formacion y ampliacion de servicios cuando los necesites.",
+      "Mantenimiento, formación y ampliación de servicios cuando los necesites.",
   },
 ];
 
 export const WHY_US = [
   "Presupuesto cerrado antes de empezar. Sin sorpresas.",
   "Sin contratos de permanencia. Cada servicio tiene inicio y fin definidos.",
-  "Integracion con lo que ya usas. Sin cambiar tus herramientas actuales.",
-  "Soporte en espanol y equipo local. Respuesta rapida y conocimiento del contexto empresarial espanol.",
+  "Integración con lo que ya usas. Sin cambiar tus herramientas actuales.",
+  "Soporte en español y equipo local. Respuesta rápida y conocimiento del contexto empresarial español.",
 ];
 
-export const EMPLOYEE_RANGES = ["1-10", "11-50", "51-200", "Mas de 200"];
+export const EMPLOYEE_RANGES = ["1-10", "11-50", "51-200", "Más de 200"];

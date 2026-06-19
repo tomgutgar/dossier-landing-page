@@ -24,7 +24,7 @@ export function Configurator() {
         <SectionHeading
           eyebrow="Configurador"
           title="Calcula tu presupuesto estimado"
-          description="Marca los servicios que te interesan y veras el rango de precio al instante. Sin registro ni datos personales."
+          description="Marca los servicios que te interesan y verás el precio estimado al instante. Sin registro ni datos personales."
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
@@ -94,7 +94,7 @@ export function Configurator() {
                 <div className="mt-6 border-t border-line pt-6">
                   <p className="text-sm text-muted">
                     {selected.length === 0
-                      ? "Ningun servicio seleccionado"
+                      ? "Ningún servicio seleccionado"
                       : `${selected.length} servicio${selected.length > 1 ? "s" : ""} seleccionado${selected.length > 1 ? "s" : ""}`}
                   </p>
                   <p
@@ -110,8 +110,8 @@ export function Configurator() {
                     {packages.map((pkg) => (
                       <p key={pkg.id}>
                         Estos servicios forman el paquete{" "}
-                        <strong>{pkg.name}</strong>. Contratandolos juntos
-                        obtienes un precio mas favorable.
+                        <strong>{pkg.name}</strong>. Contratándolos juntos
+                        obtienes un precio más favorable.
                       </p>
                     ))}
                   </div>

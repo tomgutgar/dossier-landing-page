@@ -160,6 +160,21 @@ h4 {
   animation: engrana-flow 0.9s linear infinite;
 }
 
+/* Manchas del fondo del hero: flotan suavemente en bucle */
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.06);
+  }
+}
+
+.blob-float {
+  animation: blob-float 14s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -173,7 +188,8 @@ h4 {
     transition: none;
   }
   .gear-spin,
-  .flow-paths path {
+  .flow-paths path,
+  .blob-float {
     animation: none;
   }
 }

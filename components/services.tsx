@@ -12,7 +12,7 @@ export function Services() {
   return (
     <section id="servicios" className="mx-auto max-w-6xl px-5 py-24 sm:py-28">
       <SectionHeading
-        eyebrow="Catalogo"
+        eyebrow="Catálogo"
         title="13 servicios, una sola operativa"
         description="Cada servicio resuelve un problema concreto y funciona por separado. Pulsa en una tarjeta para ver el detalle. Los precios siguen la modalidad seleccionada."
       />
@@ -30,7 +30,7 @@ export function Services() {
                   {String(items.length).padStart(2, "0")}
                 </span>
               </Reveal>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((service, i) => (
                   <Reveal key={service.id} delay={(i % 3) * 80}>
                     <ServiceCard service={service} />
@@ -50,7 +50,7 @@ function ServiceCard({ service }: { service: Service }) {
   const regionId = `service-detail-${service.id}`;
 
   return (
-    <article className="group flex h-full flex-col rounded-card border border-line bg-surface transition-[box-shadow,border-color] duration-200 hover:border-accent hover:shadow-[0_8px_24px_-12px_rgba(15,18,23,0.12)]">
+    <article className="group flex h-full flex-col rounded-card border border-line bg-surface transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_12px_30px_-16px_rgba(15,18,23,0.18)]">
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
@@ -85,7 +85,7 @@ function ServiceCard({ service }: { service: Service }) {
         </p>
         <p className="mt-4 text-sm font-semibold text-ink">{service.benefit}</p>
         <p className="mt-4 font-mono text-xs uppercase tracking-[0.1em] text-muted">
-          Implementacion: {service.duration}
+          Implementación: {service.duration}
         </p>
       </div>
     </article>

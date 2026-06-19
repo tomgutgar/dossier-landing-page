@@ -10,7 +10,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const LINKS = [
   { href: "#servicios", label: "Servicios" },
   { href: "#paquetes", label: "Paquetes" },
-  { href: "#como-funciona", label: "Como funciona" },
+  { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#contacto", label: "Contacto" },
 ];
 

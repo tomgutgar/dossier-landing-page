@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useSite } from "@/lib/context";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowRightIcon } from "@/components/icons";
@@ -9,29 +10,21 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Foco de luz radial con el acento de marca a muy baja opacidad */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 70% 20%, rgba(75,43,232,0.07), transparent 70%)",
-        }}
-      />
+      <HeroBackground />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-24 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
         <div>
           <p className="flex items-center gap-2.5 font-mono text-xs font-medium uppercase tracking-[0.16em] text-accent">
             <span aria-hidden className="h-px w-6 bg-accent" />
-            Automatizacion · Digitalizacion · IA
+            Automatización · Digitalización · IA
           </p>
           <h1 className="mt-5 font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
             Automatiza los procesos que te quitan tiempo. Sin cambiar todo lo
             que ya tienes.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            Servicios modulares de automatizacion e inteligencia artificial para
-            tu empresa. Empieza por lo que mas te urge, integralo con lo que ya
-            usas y elige donde se ejecuta. Con precio cerrado antes de empezar.
+            Servicios modulares de automatización e inteligencia artificial para
+            tu empresa. Empieza por lo que más te urge, intégralo con lo que ya
+            usas y elige dónde se ejecuta. Con precio cerrado antes de empezar.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button size="lg" onClick={() => requestQuote([])}>
@@ -53,6 +46,73 @@ export function Hero() {
   );
 }
 
+// Fondo de la seccion: manchas de color (acentos de marca) que flotan en
+// bucle (animacion CSS en el blob interior) y se desplazan con el scroll a
+// distinta velocidad (paralaje JS en la capa exterior). Cada capa separa las
+// dos transformaciones para que no compitan. Se desactiva con reduced-motion.
+function HeroBackground() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const layers = ref.current?.querySelectorAll<HTMLElement>("[data-speed]");
+    if (!layers) return;
+
+    let raf = 0;
+    const update = () => {
+      const y = window.scrollY;
+      layers.forEach((el) => {
+        const speed = parseFloat(el.dataset.speed || "0");
+        el.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+      });
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      aria-hidden
+      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+    >
+      <div
+        data-speed="0.16"
+        className="absolute -right-24 -top-28 will-change-transform"
+      >
+        <div className="blob-float h-[28rem] w-[28rem] rounded-full bg-accent/12 blur-3xl" />
+      </div>
+      <div
+        data-speed="0.30"
+        className="absolute -bottom-32 -left-24 will-change-transform"
+      >
+        <div
+          className="blob-float h-[24rem] w-[24rem] rounded-full bg-accent-3/10 blur-3xl"
+          style={{ animationDelay: "-5s", animationDuration: "19s" }}
+        />
+      </div>
+      <div
+        data-speed="-0.18"
+        className="absolute right-1/3 top-1/2 will-change-transform"
+      >
+        <div
+          className="blob-float h-72 w-72 rounded-full bg-accent-2/10 blur-3xl"
+          style={{ animationDelay: "-9s", animationDuration: "16s" }}
+        />
+      </div>
+    </div>
+  );
+}
+
 // Composicion geometrica: tres procesos convergen en el motor de Engrana
 // (el isotipo, que gira) y salen ya automatizados. Colores via tokens del
 // tema para que la pieza responda a modo claro/oscuro. Animaciones (giro y
@@ -65,7 +125,7 @@ function HeroVisual() {
           viewBox="0 0 360 300"
           className="h-auto w-full"
           role="img"
-          aria-label="Tres procesos se conectan al motor de automatizacion de Engrana, que los procesa y devuelve resueltos"
+          aria-label="Tres procesos se conectan al motor de automatización de Engrana, que los procesa y devuelve resueltos"
         >
           <defs>
             <pattern
@@ -106,17 +166,17 @@ function HeroVisual() {
             strokeLinecap="round"
           >
             <path
-              d="M74 70 H132 V112"
+              d="M74 70 L140 120"
               stroke="var(--color-accent)"
               markerEnd="url(#flow-arrow)"
             />
             <path
-              d="M74 150 H126"
+              d="M74 150 H132"
               stroke="var(--color-accent)"
               markerEnd="url(#flow-arrow)"
             />
             <path
-              d="M74 230 H132 V188"
+              d="M74 230 L140 180"
               stroke="var(--color-accent)"
               markerEnd="url(#flow-arrow)"
             />

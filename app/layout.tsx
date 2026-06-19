@@ -24,21 +24,21 @@ const mono = JetBrains_Mono({
 });
 
 const description =
-  "Automatizamos los procesos que te quitan tiempo, sin cambiar lo que ya usas. Servicios modulares de automatizacion, digitalizacion e IA para PYMEs, con precio cerrado.";
+  "Automatizamos los procesos que te quitan tiempo, sin cambiar lo que ya usas. Servicios modulares de automatización, digitalización e IA para PYMEs, con precio cerrado.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Automatizacion y digitalizacion para PYMEs`,
+    default: `${SITE.name} — Automatización y digitalización para PYMEs`,
     template: `%s — ${SITE.name}`,
   },
   description,
   keywords: [
-    "automatizacion",
-    "digitalizacion",
+    "automatización",
+    "digitalización",
     "inteligencia artificial",
     "PYME",
-    "automatizacion de procesos",
+    "automatización de procesos",
     "IA para empresas",
   ],
   openGraph: {
@@ -46,12 +46,12 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} — Automatizacion y digitalizacion para PYMEs`,
+    title: `${SITE.name} — Automatización y digitalización para PYMEs`,
     description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — Automatizacion y digitalizacion para PYMEs`,
+    title: `${SITE.name} — Automatización y digitalización para PYMEs`,
     description,
   },
   alternates: { canonical: SITE.url },

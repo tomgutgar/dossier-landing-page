@@ -23,7 +23,7 @@ export function Packages() {
         <SectionHeading
           eyebrow="Paquetes"
           title="Empieza con un pack cerrado"
-          description="Combinaciones pensadas por objetivo, con precio mas favorable que contratar los servicios por separado. El precio se ajusta a la modalidad que elijas."
+          description="Combinaciones pensadas por objetivo, con precio más favorable que contratar los servicios por separado. El precio se ajusta a la modalidad que elijas."
         />
 
         <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
@@ -31,8 +31,8 @@ export function Packages() {
             <Reveal key={pkg.id} delay={i * 80}>
               <article
                 className={cn(
-                  "relative flex h-full flex-col rounded-card border bg-surface p-8",
-                  pkg.featured ? "border-ink lg:-mt-4 lg:pb-12" : "border-line"
+                  "relative flex h-full flex-col rounded-card border bg-surface p-8 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_12px_30px_-16px_rgba(15,18,23,0.18)]",
+                  pkg.featured ? "border-accent lg:-mt-4 lg:pb-12" : "border-line"
                 )}
               >
                 {pkg.featured && (

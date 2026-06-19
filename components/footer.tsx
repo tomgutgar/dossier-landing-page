@@ -2,7 +2,7 @@ import { SITE } from "@/lib/data";
 import { LogoMark, LinkedinIcon } from "@/components/icons";
 
 const LEGAL = [
-  { href: "/privacidad", label: "Politica de privacidad" },
+  { href: "/privacidad", label: "Política de privacidad" },
   { href: "/aviso-legal", label: "Aviso legal" },
   { href: "/cookies", label: "Cookies" },
 ];

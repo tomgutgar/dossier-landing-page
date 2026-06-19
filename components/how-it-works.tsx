@@ -9,7 +9,7 @@ export function HowItWorks() {
       className="mx-auto max-w-6xl px-5 py-24 sm:py-28"
     >
       <SectionHeading
-        eyebrow="Como funciona"
+        eyebrow="Cómo funciona"
         title="De la primera llamada al servicio funcionando"
         description="Un proceso claro, con presupuesto cerrado y sin interrumpir tu operativa."
       />

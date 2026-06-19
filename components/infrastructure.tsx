@@ -9,11 +9,11 @@ import { CloudIcon, BuildingIcon } from "@/components/icons";
 import { cn } from "@/lib/cn";
 
 const ROWS = [
-  { label: "Donde se ejecuta", nube: "En servidores externos auditados", empresa: "En un servidor dedicado a cargo de nuestro equipo" },
+  { label: "Dónde se ejecuta", nube: "En servidores externos auditados", empresa: "En un servidor dedicado a cargo de nuestro equipo" },
   { label: "Tus datos", nube: "Procesados por proveedores certificados", empresa: "En un entorno aislado y exclusivo, gestionado por nosotros" },
-  { label: "Coste recurrente", nube: "Variable segun el volumen real de uso", empresa: "Sin coste por uso tras la implantacion" },
-  { label: "Puesta en marcha", nube: "Dias", empresa: "2-4 semanas" },
-  { label: "Recomendado para", nube: "Arranque rapido o empresas en crecimiento", empresa: "Datos sensibles o alto volumen" },
+  { label: "Coste recurrente", nube: "Variable según el volumen real de uso", empresa: "Sin coste por uso tras la implantación" },
+  { label: "Puesta en marcha", nube: "Días", empresa: "2-4 semanas" },
+  { label: "Recomendado para", nube: "Arranque rápido o empresas en crecimiento", empresa: "Datos sensibles o alto volumen" },
 ];
 
 const CARDS = [
@@ -28,8 +28,8 @@ export function Infrastructure() {
     <section className="mx-auto max-w-6xl px-5 py-24 sm:py-28">
       <SectionHeading
         eyebrow="Modalidades"
-        title="Tu eliges donde funciona"
-        description="Dos formas de poner en marcha cada servicio, con los mismos resultados. Cambia la modalidad y veras los precios actualizarse en toda la pagina."
+        title="Tú eliges dónde funciona"
+        description="Dos formas de poner en marcha cada servicio, con los mismos resultados. Cambia la modalidad y verás los precios actualizarse en toda la página."
       />
 
       <Reveal className="mt-8 flex justify-center">
@@ -44,8 +44,8 @@ export function Infrastructure() {
             <Reveal key={id} delay={i * 80}>
               <article
                 className={cn(
-                  "h-full rounded-card border bg-surface p-8 transition-colors duration-200",
-                  active ? "border-ink" : "border-line"
+                  "h-full rounded-card border bg-surface p-8 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_12px_30px_-16px_rgba(15,18,23,0.18)]",
+                  active ? "border-accent" : "border-line"
                 )}
               >
                 <div className="flex items-center justify-between">
