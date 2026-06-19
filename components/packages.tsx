@@ -40,7 +40,7 @@ export function Packages() {
                     <Badge tone="yellow">Recomendado</Badge>
                   </div>
                 )}
-                <h3 className="font-serif text-2xl tracking-tight text-ink">
+                <h3 className="font-display text-2xl tracking-tight text-ink">
                   {pkg.name}
                 </h3>
                 <p className="mt-2 text-sm text-muted">{pkg.description}</p>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, Newsreader, JetBrains_Mono } from "next/font/google";
+import { Hanken_Grotesk, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { SiteProvider } from "@/lib/context";
 import { SITE } from "@/lib/data";
 import "./globals.css";
@@ -10,11 +10,11 @@ const sans = Hanken_Grotesk({
   variable: "--font-hanken",
 });
 
-const serif = Newsreader({
+const display = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  style: ["normal", "italic"],
-  variable: "--font-newsreader",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space",
 });
 
 const mono = JetBrains_Mono({
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fbfbfa",
+  themeColor: "#f6f7f9",
 };
 
 const jsonLd = {
@@ -80,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${sans.variable} ${serif.variable} ${mono.variable}`}
+      className={`${sans.variable} ${display.variable} ${mono.variable}`}
     >
       <body>
         <script

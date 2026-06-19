@@ -20,9 +20,11 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-canvas/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="flex items-center gap-2 font-medium">
-          <LogoMark className="h-6 w-6 text-ink" />
-          <span className="text-lg tracking-tight">{SITE.name}</span>
+        <a href="#top" className="flex items-center gap-2.5 font-medium">
+          <LogoMark className="h-7 w-7 text-ink" />
+          <span className="font-display text-lg font-semibold tracking-tight">
+            Engran<span className="text-accent">a</span>
+          </span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

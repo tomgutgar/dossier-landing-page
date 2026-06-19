@@ -1,34 +1,55 @@
 @import "tailwindcss";
 
 @theme {
-  /* Lienzo y superficies (monocromo calido) */
-  --color-canvas: #fbfbfa;
+  /* ============================================================
+     ENGRANA — Sistema visual (modo claro, gran presencia de blanco)
+     ============================================================ */
+
+  /* Lienzo y superficies */
+  --color-canvas: #f6f7f9;
   --color-surface: #ffffff;
-  --color-surface-2: #f7f6f3;
+  --color-surface-2: #eef0f4;
 
   /* Tinta y texto */
-  --color-ink: #1a1a1a;
-  --color-muted: #787774;
+  --color-ink: #0f1217;
+  --color-muted: #525c6a;
 
   /* Bordes / divisores */
-  --color-line: #eaeaea;
+  --color-line: #e2e6ec;
+  --color-line-strong: #cdd3dc;
 
-  /* Acentos pastel apagados */
-  --color-pale-red: #fdebec;
-  --color-pale-red-ink: #9f2f2d;
-  --color-pale-blue: #e1f3fe;
-  --color-pale-blue-ink: #1f6c9f;
-  --color-pale-green: #edf3ec;
-  --color-pale-green-ink: #346538;
-  --color-pale-yellow: #fbf3db;
-  --color-pale-yellow-ink: #956400;
+  /* Acento primario — indigo electrico */
+  --color-accent: #4b2be8;
+  --color-accent-press: #3a1fc4;
+  --color-accent-soft: #ece8fd;
+  --color-on-accent: #ffffff;
+
+  /* Acento secundario — lima neon */
+  --color-accent-2: #bef03a;
+  --color-accent-2-soft: #f2fbd6;
+  --color-on-accent-2: #15200a;
+
+  /* Acento secundario — cian electrico */
+  --color-accent-3: #12c2ba;
+  --color-accent-3-soft: #d6f6f4;
+  --color-on-accent-3: #06201e;
+
+  /* Estados (mapeados a los tokens pastel historicos) */
+  --color-pale-red: #fbe3e4;
+  --color-pale-red-ink: #c42b2e;
+  --color-pale-blue: #ece8fd;
+  --color-pale-blue-ink: #4b2be8;
+  --color-pale-green: #dcf5ea;
+  --color-pale-green-ink: #0a7a52;
+  --color-pale-yellow: #fcefd4;
+  --color-pale-yellow-ink: #8a5300;
 
   /* Tipografias (variables inyectadas por next/font en layout.tsx) */
   --font-sans: var(--font-hanken), "Helvetica Neue", system-ui, sans-serif;
-  --font-serif: var(--font-newsreader), "Newsreader", Georgia, serif;
+  --font-display: var(--font-space), "Space Grotesk", system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
 
-  --radius-card: 12px;
+  --radius-card: 14px;
 }
 
 html {
@@ -44,9 +65,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Titulares display — geometria limpia, tracking ajustado (sistema Engrana) */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
 ::selection {
-  background: var(--color-pale-yellow);
-  color: var(--color-ink);
+  background: var(--color-accent);
+  color: #ffffff;
 }
 
 /* Transicion suave de precios al cambiar de modalidad (PRD seccion 8) */

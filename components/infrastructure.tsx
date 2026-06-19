@@ -58,7 +58,7 @@ export function Infrastructure() {
                     </span>
                   )}
                 </div>
-                <h3 className="mt-5 font-serif text-2xl tracking-tight text-ink">
+                <h3 className="mt-5 font-display text-2xl tracking-tight text-ink">
                   {m.label}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">

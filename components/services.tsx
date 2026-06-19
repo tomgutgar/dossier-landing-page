@@ -23,7 +23,7 @@ export function Services() {
           return (
             <div key={area.id}>
               <Reveal className="mb-6 flex items-baseline gap-3">
-                <h3 className="font-serif text-2xl tracking-tight text-ink">
+                <h3 className="font-display text-2xl tracking-tight text-ink">
                   {area.name}
                 </h3>
                 <span className="font-mono text-xs text-muted">
@@ -50,12 +50,12 @@ function ServiceCard({ service }: { service: Service }) {
   const regionId = `service-detail-${service.id}`;
 
   return (
-    <article className="group flex h-full flex-col rounded-card border border-line bg-surface transition-shadow duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+    <article className="group flex h-full flex-col rounded-card border border-line bg-surface transition-[box-shadow,border-color] duration-200 hover:border-accent hover:shadow-[0_8px_24px_-12px_rgba(15,18,23,0.12)]">
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls={regionId}
-        className="flex w-full flex-col gap-3 rounded-card p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+        className="flex w-full flex-col gap-3 rounded-card p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
         <div className="flex items-start justify-between gap-3">
           <h4 className="text-base font-medium leading-snug text-ink">

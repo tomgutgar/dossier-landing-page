@@ -99,7 +99,7 @@ export function Configurator() {
                   </p>
                   <p
                     key={`${modality}-${selected.length}`}
-                    className="price-shift mt-2 font-serif text-3xl tracking-tight text-ink"
+                    className="price-shift mt-2 font-display text-3xl tracking-tight text-ink"
                   >
                     {selected.length === 0 ? formatEur(0) : formatPrice(total)}
                   </p>

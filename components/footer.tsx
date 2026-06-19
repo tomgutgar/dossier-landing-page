@@ -12,9 +12,11 @@ export function Footer() {
     <footer className="border-t border-line bg-canvas">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <a href="#top" className="flex items-center gap-2 font-medium">
-            <LogoMark className="h-6 w-6 text-ink" />
-            <span className="text-lg tracking-tight">{SITE.name}</span>
+          <a href="#top" className="flex items-center gap-2.5 font-medium">
+            <LogoMark className="h-7 w-7 text-ink" />
+            <span className="font-display text-lg font-semibold tracking-tight">
+              Engran<span className="text-accent">a</span>
+            </span>
           </a>
           <p className="mt-3 max-w-xs text-sm text-muted">{SITE.tagline}.</p>
           <a

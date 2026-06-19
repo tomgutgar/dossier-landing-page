@@ -4,9 +4,9 @@ import { ModularIcon, PlugIcon, SlidersIcon } from "@/components/icons";
 
 const ICONS = [ModularIcon, PlugIcon, SlidersIcon];
 const TONES = [
-  "bg-pale-blue text-pale-blue-ink",
-  "bg-pale-green text-pale-green-ink",
-  "bg-pale-yellow text-pale-yellow-ink",
+  "bg-accent-soft text-accent",
+  "bg-accent-3-soft text-accent-3",
+  "bg-accent-2-soft text-on-accent-2",
 ];
 
 export function Pillars() {

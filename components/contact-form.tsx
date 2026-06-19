@@ -112,7 +112,7 @@ export function ContactForm() {
           <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-md bg-pale-green text-pale-green-ink">
             <CheckIcon className="h-6 w-6" />
           </span>
-          <h2 className="mt-6 font-serif text-2xl tracking-tight text-ink">
+          <h2 className="mt-6 font-display text-2xl tracking-tight text-ink">
             Solicitud recibida
           </h2>
           <p className="mt-3 text-muted">

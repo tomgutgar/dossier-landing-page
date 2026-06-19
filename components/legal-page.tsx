@@ -20,7 +20,7 @@ export function LegalPage({
         <ArrowRightIcon className="h-4 w-4 rotate-180" />
         Volver al inicio
       </Link>
-      <h1 className="mt-8 font-serif text-4xl tracking-tight text-ink">
+      <h1 className="mt-8 font-display text-4xl tracking-tight text-ink">
         {title}
       </h1>
       <div className="mt-6 space-y-4 text-muted leading-relaxed">{children}</div>

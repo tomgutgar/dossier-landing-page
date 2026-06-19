@@ -9,21 +9,22 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Foco de luz radial calido a muy baja opacidad (skill seccion 6) */}
+      {/* Foco de luz radial con el acento de marca a muy baja opacidad */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 50% at 70% 20%, rgba(149,100,0,0.05), transparent 70%)",
+            "radial-gradient(60% 50% at 70% 20%, rgba(75,43,232,0.07), transparent 70%)",
         }}
       />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-24 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+          <p className="flex items-center gap-2.5 font-mono text-xs font-medium uppercase tracking-[0.16em] text-accent">
+            <span aria-hidden className="h-px w-6 bg-accent" />
             Automatizacion · Digitalizacion · IA
           </p>
-          <h1 className="mt-5 font-serif text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-5 font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
             Automatiza los procesos que te quitan tiempo. Sin cambiar todo lo
             que ya tienes.
           </h1>
@@ -70,7 +71,7 @@ function HeroVisual() {
               height="18"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="1.5" cy="1.5" r="1.2" fill="#eaeaea" />
+              <circle cx="1.5" cy="1.5" r="1.2" fill="#e2e6ec" />
             </pattern>
           </defs>
           <rect width="360" height="300" fill="url(#dots)" />
@@ -79,27 +80,27 @@ function HeroVisual() {
           <path
             d="M70 70 H180 V150 H290"
             fill="none"
-            stroke="#d8d8d6"
+            stroke="#cdd3dc"
             strokeWidth="1.5"
           />
           <path
             d="M70 150 H180"
             fill="none"
-            stroke="#d8d8d6"
+            stroke="#cdd3dc"
             strokeWidth="1.5"
           />
           <path
             d="M70 230 H180 V150"
             fill="none"
-            stroke="#d8d8d6"
+            stroke="#cdd3dc"
             strokeWidth="1.5"
           />
 
           {/* nodos de entrada */}
           <g>
-            <rect x="30" y="52" width="40" height="36" rx="8" fill="#fdebec" />
-            <rect x="30" y="132" width="40" height="36" rx="8" fill="#e1f3fe" />
-            <rect x="30" y="212" width="40" height="36" rx="8" fill="#fbf3db" />
+            <rect x="30" y="52" width="40" height="36" rx="8" fill="#ece8fd" />
+            <rect x="30" y="132" width="40" height="36" rx="8" fill="#d6f6f4" />
+            <rect x="30" y="212" width="40" height="36" rx="8" fill="#f2fbd6" />
           </g>
 
           {/* nodo central de proceso */}
@@ -109,7 +110,7 @@ function HeroVisual() {
             width="60"
             height="60"
             rx="12"
-            fill="#1a1a1a"
+            fill="#4b2be8"
           />
           <circle cx="180" cy="150" r="11" fill="none" stroke="#fff" strokeWidth="1.6" />
           <path
@@ -120,10 +121,10 @@ function HeroVisual() {
           />
 
           {/* salida */}
-          <rect x="280" y="130" width="48" height="40" rx="10" fill="#edf3ec" />
+          <rect x="280" y="130" width="48" height="40" rx="10" fill="#dcf5ea" />
           <path
             d="M294 150l5 5 9-10"
-            stroke="#346538"
+            stroke="#0a7a52"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

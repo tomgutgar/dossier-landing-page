@@ -132,16 +132,29 @@ export function LinkedinIcon({ className }: IconProps) {
   );
 }
 
-// Marca / logotipo (engranaje estilizado)
+// Marca / isotipo Engrana — engranaje de 6 dientes equidistantes (cada 60deg)
+// con disco central y nodo de "engrane" cuadrado rotado a 45deg en color acento.
+// Los dientes y el disco heredan currentColor; el nodo usa el indigo de marca.
 export function LogoMark({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden fill="none">
-      <circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.6" />
-      <path
-        d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
+    <svg viewBox="0 0 96 96" className={className} aria-hidden>
+      <g fill="currentColor">
+        <rect x="41" y="6" width="14" height="24" rx="4" />
+        <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(60 48 48)" />
+        <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(120 48 48)" />
+        <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(180 48 48)" />
+        <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(240 48 48)" />
+        <rect x="41" y="6" width="14" height="24" rx="4" transform="rotate(300 48 48)" />
+        <circle cx="48" cy="48" r="22" />
+      </g>
+      <rect
+        x="35"
+        y="35"
+        width="26"
+        height="26"
+        rx="6"
+        transform="rotate(45 48 48)"
+        fill="var(--color-accent)"
       />
     </svg>
   );
