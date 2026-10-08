@@ -2,6 +2,7 @@
 
 import { useSite } from "@/lib/context";
 import { MODALITIES, Modality } from "@/lib/data";
+import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 const ORDER: Modality[] = ["nube", "empresa"];
@@ -22,7 +23,7 @@ export function ModalityToggle({
       role="radiogroup"
       aria-label="Modalidad de infraestructura"
       className={cn(
-        "inline-flex items-center rounded-md border border-line bg-surface-2 p-1",
+        "inline-flex items-center rounded-full border border-line bg-surface p-1",
         className
       )}
     >
@@ -36,14 +37,19 @@ export function ModalityToggle({
             id={`${idPrefix}-${id}`}
             onClick={() => setModality(id)}
             className={cn(
-              "rounded-[5px] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink",
+              "relative rounded-full font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
               size === "sm" ? "px-3 py-1 text-[13px]" : "px-4 py-1.5 text-sm",
-              active
-                ? "bg-surface text-ink shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
-                : "text-muted hover:text-ink"
+              active ? "text-on-accent" : "text-muted hover:text-ink"
             )}
           >
-            {MODALITIES[id].label}
+            {active && (
+              <motion.span
+                layoutId={`${idPrefix}-thumb`}
+                className="absolute inset-0 rounded-full bg-accent"
+                transition={{ type: "spring", stiffness: 420, damping: 34 }}
+              />
+            )}
+            <span className="relative">{MODALITIES[id].label}</span>
           </button>
         );
       })}

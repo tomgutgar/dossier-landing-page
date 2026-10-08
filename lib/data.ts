@@ -305,3 +305,35 @@ export const WHY_US = [
 ];
 
 export const EMPLOYEE_RANGES = ["1-10", "11-50", "51-200", "Más de 200"];
+
+// Hero: procesos de entrada del motor y eventos que aparecen en el registro animado
+export const HERO_INPUTS = ["Emails", "Facturas", "Pedidos"];
+
+export const HERO_EVENTS = [
+  { label: "Factura registrada en el ERP", meta: "Facturas" },
+  { label: "Lead añadido al CRM y respondido", meta: "Emails" },
+  { label: "Pedido sincronizado con el almacén", meta: "Pedidos" },
+  { label: "Informe semanal enviado a dirección", meta: "Informes" },
+  { label: "Cita confirmada por WhatsApp", meta: "Clientes" },
+];
+
+// Cifras del hero derivadas de la propia oferta (no inventar metricas)
+export const HERO_STATS = [
+  { value: "13", label: "servicios modulares" },
+  { value: "2", label: "modalidades de despliegue" },
+  { value: "<24h", label: "respuesta a tu consulta" },
+];
+
+// Herramientas habituales con las que se integran los servicios (cinta animada)
+export const INTEGRATIONS = [
+  "Email",
+  "Hojas de cálculo",
+  "ERP",
+  "CRM",
+  "WhatsApp",
+  "Facturación",
+  "Calendario",
+  "Formularios web",
+  "Tienda online",
+  "Gestión documental",
+];

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Hanken_Grotesk, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { SiteProvider } from "@/lib/context";
+import { MotionProvider } from "@/components/motion/provider";
 import { SITE } from "@/lib/data";
 import "./globals.css";
 
@@ -97,7 +98,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <SiteProvider>{children}</SiteProvider>
+        <MotionProvider>
+          <SiteProvider>{children}</SiteProvider>
+        </MotionProvider>
       </body>
     </html>
   );

@@ -44,7 +44,7 @@ export function Infrastructure() {
             <Reveal key={id} delay={i * 80}>
               <article
                 className={cn(
-                  "h-full rounded-card border bg-surface p-8 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_12px_30px_-16px_rgba(15,18,23,0.18)]",
+                  "h-full rounded-card border bg-surface p-8 card-lift",
                   active ? "border-accent" : "border-line"
                 )}
               >

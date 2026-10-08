@@ -4,31 +4,40 @@ import { ModularIcon, PlugIcon, SlidersIcon } from "@/components/icons";
 
 const ICONS = [ModularIcon, PlugIcon, SlidersIcon];
 const TONES = [
-  "bg-accent-soft text-accent",
-  "bg-accent-3-soft text-accent-3",
-  "bg-accent-2-soft text-on-accent-2",
+  "bg-accent-soft text-accent group-hover:bg-accent group-hover:text-on-accent",
+  "bg-accent-3-soft text-accent-3 group-hover:bg-accent-3 group-hover:text-on-accent-3",
+  "bg-accent-2-soft text-on-accent-2 group-hover:bg-accent-2 group-hover:text-[#15200a]",
 ];
 
 export function Pillars() {
   return (
-    <section className="border-y border-line bg-surface-2">
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-16 sm:grid-cols-3 sm:py-20">
+    <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+      <div className="grid gap-px overflow-hidden rounded-[20px] border border-line bg-line sm:grid-cols-3">
         {PILLARS.map((pillar, i) => {
           const Icon = ICONS[i];
           return (
-            <Reveal key={pillar.title} delay={i * 80}>
-              <div className="group h-full rounded-card border border-line bg-surface p-8 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_12px_30px_-16px_rgba(15,18,23,0.18)]">
-                <span
-                  className={`inline-flex h-11 w-11 items-center justify-center rounded-md ${TONES[i]}`}
-                >
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-5 text-lg font-medium text-ink">
+            <Reveal key={pillar.title} delay={i * 90} className="bg-surface">
+              <div className="group relative h-full p-8 sm:p-10">
+                <div className="flex items-center justify-between">
+                  <span
+                    className={`inline-flex h-12 w-12 items-center justify-center rounded-xl transition-[background-color,color,transform] duration-300 group-hover:-rotate-6 ${TONES[i]}`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="font-mono text-xs text-muted">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="mt-8 font-display text-2xl font-medium tracking-tight text-ink">
                   {pillar.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {pillar.description}
                 </p>
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100"
+                />
               </div>
             </Reveal>
           );
