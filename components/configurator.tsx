@@ -7,7 +7,9 @@ import { SectionHeading } from "@/components/section-heading";
 import { ModalityToggle } from "@/components/modality-toggle";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
-import { CheckIcon } from "@/components/icons";
+import { AnimatePresence, motion } from "motion/react";
+import { CountUp } from "@/components/motion/count-up";
+import { EASE_OUT } from "@/components/motion/easing";
 import { cn } from "@/lib/cn";
 
 export function Configurator() {
@@ -51,13 +53,25 @@ export function Configurator() {
                             <span className="flex items-center gap-3">
                               <span
                                 className={cn(
-                                  "flex h-5 w-5 items-center justify-center rounded-[5px] border transition-colors",
+                                  "flex h-5 w-5 items-center justify-center rounded-[6px] border transition-colors duration-200",
                                   checked
-                                    ? "border-ink bg-ink text-white"
-                                    : "border-line bg-surface"
+                                    ? "border-accent bg-accent text-on-accent"
+                                    : "border-line-strong bg-surface"
                                 )}
                               >
-                                {checked && <CheckIcon className="h-3.5 w-3.5" />}
+                                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" aria-hidden>
+                                  <motion.path
+                                    d="M5 12.5l4.5 4.5L19 7.5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2.4"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    initial={false}
+                                    animate={{ pathLength: checked ? 1 : 0, opacity: checked ? 1 : 0 }}
+                                    transition={{ duration: 0.25, ease: EASE_OUT }}
+                                  />
+                                </svg>
                               </span>
                               <input
                                 type="checkbox"
@@ -85,7 +99,7 @@ export function Configurator() {
           {/* Resumen */}
           <Reveal delay={80}>
             <div className="lg:sticky lg:top-24">
-              <div className="rounded-card border border-line bg-surface p-6">
+              <div className="rounded-[20px] border border-line bg-surface p-6 sm:p-7">
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-sm font-medium text-ink">Modalidad</span>
                   <ModalityToggle size="sm" idPrefix="cfg" />
@@ -97,25 +111,39 @@ export function Configurator() {
                       ? "Ningún servicio seleccionado"
                       : `${selected.length} servicio${selected.length > 1 ? "s" : ""} seleccionado${selected.length > 1 ? "s" : ""}`}
                   </p>
-                  <p
-                    key={`${modality}-${selected.length}`}
-                    className="price-shift mt-2 font-display text-3xl tracking-tight text-ink"
-                  >
-                    {selected.length === 0 ? formatEur(0) : formatPrice(total)}
+                  <p className="mt-2 font-display text-4xl font-medium tracking-tight text-ink tabular-nums">
+                    <CountUp
+                      value={total.min}
+                      format={(n) =>
+                        selected.length === 0
+                          ? formatEur(0)
+                          : formatPrice({ min: n, max: total.max })
+                      }
+                    />
                   </p>
                 </div>
 
-                {packages.length > 0 && (
-                  <div className="mt-5 rounded-md bg-pale-green p-4 text-sm text-pale-green-ink">
-                    {packages.map((pkg) => (
-                      <p key={pkg.id}>
-                        Estos servicios forman el paquete{" "}
-                        <strong>{pkg.name}</strong>. Contratándolos juntos
-                        obtienes un precio más favorable.
-                      </p>
-                    ))}
-                  </div>
-                )}
+                <AnimatePresence initial={false}>
+                  {packages.length > 0 && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: EASE_OUT }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-5 rounded-md bg-pale-green p-4 text-sm text-pale-green-ink">
+                        {packages.map((pkg) => (
+                          <p key={pkg.id}>
+                            Estos servicios forman el paquete{" "}
+                            <strong>{pkg.name}</strong>. Contratándolos juntos
+                            obtienes un precio más favorable.
+                          </p>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 <p className="mt-5 text-xs leading-relaxed text-muted">
                   Este es un precio de referencia. El presupuesto definitivo se

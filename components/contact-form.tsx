@@ -6,13 +6,13 @@ import { SERVICES, EMPLOYEE_RANGES, Modality } from "@/lib/data";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
-import { CheckIcon } from "@/components/icons";
+import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 type ModalityChoice = Modality | "indistinto";
 
 const inputClass =
-  "w-full rounded-md border border-line bg-surface px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-muted focus:border-ink focus:ring-2 focus:ring-ink/10";
+  "w-full rounded-md border border-line bg-surface px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-muted hover:border-line-strong focus:border-accent focus:ring-4 focus:ring-accent/15";
 
 const MODALITY_OPTIONS: { value: ModalityChoice; label: string }[] = [
   { value: "empresa", label: "Instalación en empresa" },
@@ -109,9 +109,26 @@ export function ContactForm() {
     return (
       <section id="contacto" className="mx-auto max-w-6xl px-5 py-24 sm:py-28">
         <Reveal className="mx-auto max-w-xl rounded-card border border-line bg-surface p-10 text-center">
-          <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-md bg-pale-green text-pale-green-ink">
-            <CheckIcon className="h-6 w-6" />
-          </span>
+          <motion.span
+            initial={{ scale: 0.4, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 260, damping: 16 }}
+            className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-pale-green text-pale-green-ink"
+          >
+            <svg viewBox="0 0 24 24" className="h-7 w-7" aria-hidden>
+              <motion.path
+                d="M5 12.5l4.5 4.5L19 7.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              />
+            </svg>
+          </motion.span>
           <h2 className="mt-6 font-display text-2xl tracking-tight text-ink">
             Solicitud recibida
           </h2>
@@ -135,7 +152,7 @@ export function ContactForm() {
         <form
           noValidate
           onSubmit={handleSubmit}
-          className="rounded-card border border-line bg-surface p-6 sm:p-8"
+          className="rounded-[20px] border border-line bg-surface p-6 sm:p-10"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             <Field
@@ -203,10 +220,10 @@ export function ContactForm() {
                     aria-pressed={on}
                     onClick={() => toggleServicio(s.id)}
                     className={cn(
-                      "rounded-full border px-3 py-1.5 text-xs transition-colors",
+                      "rounded-full border px-3 py-1.5 text-xs transition-[background-color,border-color,color,transform] duration-200 active:scale-95",
                       on
-                        ? "border-ink bg-ink text-white"
-                        : "border-line bg-surface text-muted hover:text-ink"
+                        ? "border-accent bg-accent text-on-accent"
+                        : "border-line bg-surface text-muted hover:border-accent hover:text-ink"
                     )}
                   >
                     {s.name}
@@ -230,7 +247,7 @@ export function ContactForm() {
                   <input
                     type="radio"
                     name="modalidad"
-                    className="h-4 w-4 accent-ink"
+                    className="h-4 w-4 accent-[var(--color-accent)]"
                     checked={modalidad === opt.value}
                     onChange={() => setModalidad(opt.value)}
                   />
@@ -272,7 +289,7 @@ export function ContactForm() {
           <label className="mt-6 flex items-start gap-3 text-sm text-ink">
             <input
               type="checkbox"
-              className="mt-0.5 h-4 w-4 accent-ink"
+              className="mt-0.5 h-4 w-4 accent-[var(--color-accent)]"
               checked={privacidad}
               onChange={(e) => setPrivacidad(e.target.checked)}
               onBlur={() => setTouched((t) => ({ ...t, privacidad: true }))}

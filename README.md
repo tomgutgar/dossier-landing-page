@@ -8,6 +8,7 @@ integracion de IA dirigidos a PYMEs. Implementa el [PRD v2.0](docs/PRD.md).
 - **Next.js 16** (App Router) + **React 19**
 - **Tailwind CSS v4**
 - Componentes propios estilo shadcn (sin dependencias de UI externas)
+- **motion** (`motion/react`) para animaciones: entradas, layout, scroll y SVG (`components/motion/`)
 - Estado global con **React Context** (toggle de modalidad + configurador), persistido en `sessionStorage`
 - Tipografias via `next/font` (Hanken Grotesk, Newsreader, JetBrains Mono)
 

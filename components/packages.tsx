@@ -31,28 +31,53 @@ export function Packages() {
             <Reveal key={pkg.id} delay={i * 80}>
               <article
                 className={cn(
-                  "relative flex h-full flex-col rounded-card border bg-surface p-8 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_12px_30px_-16px_rgba(15,18,23,0.18)]",
-                  pkg.featured ? "border-accent lg:-mt-4 lg:pb-12" : "border-line"
+                  "relative flex h-full flex-col rounded-[20px] border p-8 card-lift",
+                  pkg.featured
+                    ? "border-night bg-night text-on-night lg:-mt-6 lg:pb-12"
+                    : "border-line bg-surface text-ink"
                 )}
               >
-                {pkg.featured && (
-                  <div className="absolute -top-3 left-8">
-                    <Badge tone="yellow">Recomendado</Badge>
-                  </div>
-                )}
-                <h3 className="font-display text-2xl tracking-tight text-ink">
+                <div className="flex items-center justify-between gap-3">
+                  <span
+                    className={cn(
+                      "font-mono text-xs",
+                      pkg.featured ? "text-on-night/60" : "text-muted"
+                    )}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {pkg.featured && <Badge tone="lime">Recomendado</Badge>}
+                </div>
+                <h3 className="mt-6 font-display text-3xl font-medium tracking-tight">
                   {pkg.name}
                 </h3>
-                <p className="mt-2 text-sm text-muted">{pkg.description}</p>
+                <p
+                  className={cn(
+                    "mt-2 text-sm",
+                    pkg.featured ? "text-on-night/70" : "text-muted"
+                  )}
+                >
+                  {pkg.description}
+                </p>
 
-                <p className="mt-6 text-2xl font-medium text-ink">
+                <p className="mt-8 font-display text-3xl font-medium tracking-tight">
                   <PriceText price={pkg.price} />
                 </p>
 
-                <ul className="mt-6 flex-1 space-y-3 border-t border-line pt-6">
+                <ul
+                  className={cn(
+                    "mt-6 flex-1 space-y-3 border-t pt-6",
+                    pkg.featured ? "border-on-night/15" : "border-line"
+                  )}
+                >
                   {pkg.serviceIds.map((id) => (
-                    <li key={id} className="flex gap-3 text-sm text-ink">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-pale-green-ink" />
+                    <li key={id} className="flex gap-3 text-sm">
+                      <CheckIcon
+                        className={cn(
+                          "mt-0.5 h-4 w-4 shrink-0",
+                          pkg.featured ? "text-accent-2" : "text-pale-green-ink"
+                        )}
+                      />
                       <span>{serviceName(id)}</span>
                     </li>
                   ))}
@@ -60,7 +85,7 @@ export function Packages() {
 
                 {pkg.featured ? (
                   <Button
-                    className="mt-8 w-full"
+                    className="mt-8 w-full focus-visible:ring-offset-night"
                     onClick={() => requestQuote(pkg.serviceIds)}
                   >
                     Solicitar este paquete

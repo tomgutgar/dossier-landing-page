@@ -6,6 +6,7 @@ const tones = {
   blue: "bg-pale-blue text-pale-blue-ink",
   green: "bg-pale-green text-pale-green-ink",
   yellow: "bg-pale-yellow text-pale-yellow-ink",
+  lime: "bg-accent-2 text-[#15200a]",
 } as const;
 
 export function Badge({

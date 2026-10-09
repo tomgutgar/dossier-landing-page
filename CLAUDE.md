@@ -20,6 +20,8 @@ Requisitos en `docs/PRD.md`.
 - **Diseno**: monocromo calido + pasteles apagados, bordes de 1px (`border-line`), flat,
   sin gradientes ni sombras pesadas, sin librerias de iconos (SVG propios en `components/icons.tsx`).
 - **Componentes UI** estilo shadcn escritos a mano en `components/ui/`.
+- **Animacion** con `motion/react` (primitivas en `components/motion/`). `MotionProvider` aplica
+  `reducedMotion="user"`; las animaciones CSS de `globals.css` se anulan con `prefers-reduced-motion`.
 
 ## Comandos
 
