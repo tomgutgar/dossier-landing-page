@@ -197,17 +197,6 @@ h4 {
   animation: engine-pulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
-/* Cinta de integraciones */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  animation: marquee 38s linear infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -226,12 +215,8 @@ h4 {
     transform: none;
   }
   .gear-spin,
-  .engine-pulse,
-  .marquee-track {
+  .engine-pulse {
     animation: none;
-  }
-  .marquee {
-    overflow-x: auto;
   }
 }
 

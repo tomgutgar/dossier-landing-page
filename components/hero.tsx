@@ -9,10 +9,9 @@ import {
   useTransform,
 } from "motion/react";
 import { useSite } from "@/lib/context";
-import { HERO_EVENTS, HERO_INPUTS, HERO_STATS, INTEGRATIONS } from "@/lib/data";
+import { HERO_EVENTS, HERO_INPUTS, HERO_STATS } from "@/lib/data";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowRightIcon, CheckIcon } from "@/components/icons";
-import { Marquee } from "@/components/motion/marquee";
 import { EASE_OUT } from "@/components/motion/easing";
 
 // Titular dividido en palabras para la entrada escalonada. La palabra marcada
@@ -147,19 +146,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="border-y border-line bg-surface"
-      >
-        <div className="mx-auto flex max-w-6xl items-center gap-6 px-5">
-          <p className="hidden shrink-0 border-r border-line py-5 pr-6 font-mono text-[11px] uppercase tracking-[0.14em] text-muted sm:block">
-            Se integra con
-          </p>
-          <Marquee items={INTEGRATIONS} className="py-5" />
-        </div>
-      </motion.div>
     </section>
   );
 }

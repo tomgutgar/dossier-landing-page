@@ -323,17 +323,3 @@ export const HERO_STATS = [
   { value: "2", label: "modalidades de despliegue" },
   { value: "<24h", label: "respuesta a tu consulta" },
 ];
-
-// Herramientas habituales con las que se integran los servicios (cinta animada)
-export const INTEGRATIONS = [
-  "Email",
-  "Hojas de cálculo",
-  "ERP",
-  "CRM",
-  "WhatsApp",
-  "Facturación",
-  "Calendario",
-  "Formularios web",
-  "Tienda online",
-  "Gestión documental",
-];
